@@ -36,21 +36,28 @@ namespace DungeonRun
             while (true)
             {
 
-                ConsoleKeyInfo WayToGo = Console.ReadKey();
-                switch (WayToGo.Key)
+               // ConsoleKeyInfo WayToGo = Console.ReadKey();
+                switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.W: if (Map[y - 1, x] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x, y--); Map[y, x] = '@'; Console.Write('@'); } break;
                     case ConsoleKey.A: if (Map[y, x - 1] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x--, y); Map[y, x] = '@'; Console.Write('@'); } break;
                     case ConsoleKey.S: if (Map[y + 1, x] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x, y++); Map[y, x] = '@'; Console.Write('@'); } break;
                     case ConsoleKey.D: if (Map[y, x + 1] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x++, y); Map[y, x] = '@'; Console.Write('@'); } break;
                 }
-            Console.Clear();
-                for (int i = 0; i < Map.GetLength(0); i++)
-                {
-                    for (int j = 0; j < Map.GetLength(1); j++)
-                        Console.Write(Map[i,j]);
-                    Console.WriteLine();
-                }
+
+                for (int i = y - 1; i < y + 1; i++)
+                    for (int j = x - 1; j < x + 1; j++)  
+                        Console.Write(Map[i, j]);
+                    
+                
+
+            //Console.Clear();
+            //    for (int i = 0; i < Map.GetLength(0); i++)
+            //    {
+            //        for (int j = 0; j < Map.GetLength(1); j++)
+            //            Console.Write(Map[i,j]);
+            //        Console.WriteLine();
+            //    }
 
 
 
