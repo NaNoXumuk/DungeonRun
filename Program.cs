@@ -59,7 +59,7 @@ namespace DungeonRun
             //        Console.WriteLine();
             //    }
 
-
+                //Проверочный комент
 
             }
         }
