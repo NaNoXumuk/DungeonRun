@@ -14,6 +14,7 @@ namespace DungeonRun
             
             Console.CursorVisible = false;
             Console.SetCursorPosition(0, 0);
+            
             Console.WindowHeight = Console.LargestWindowHeight;
             Console.WindowWidth = Console.LargestWindowWidth;
             
@@ -32,32 +33,41 @@ namespace DungeonRun
             
                 Console.SetCursorPosition(x, y);
             Console.Write('@');
-            Console.ReadKey();
+            
             while (true)
             {
 
-               // ConsoleKeyInfo WayToGo = Console.ReadKey();
+               
+
+                //switch (Console.ReadKey().Key)
+                //{
+                //    case ConsoleKey.W: if (Map[y - 1, x] != '#') { Console.Write(' '); Console.SetCursorPosition(x, y--); } break;
+                //    case ConsoleKey.A: if (Map[y, x - 1] != '#') { Console.Write(' '); Console.SetCursorPosition(x--, y); } break;
+                //    case ConsoleKey.S: if (Map[y + 1, x] != '#') { Console.Write(' '); Console.SetCursorPosition(x, y++); } break;
+                //    case ConsoleKey.D: if (Map[y, x + 1] != '#') { Console.Write(' '); Console.SetCursorPosition(x++, y); } break;
+                //}
                 switch (Console.ReadKey().Key)
                 {
-                    case ConsoleKey.W: if (Map[y - 1, x] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x, y--); Map[y, x] = '@'; Console.Write('@'); } break;
-                    case ConsoleKey.A: if (Map[y, x - 1] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x--, y); Map[y, x] = '@'; Console.Write('@'); } break;
-                    case ConsoleKey.S: if (Map[y + 1, x] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x, y++); Map[y, x] = '@'; Console.Write('@'); } break;
-                    case ConsoleKey.D: if (Map[y, x + 1] != '#') { Map[y, x] = ' '; Console.Write(' '); Console.SetCursorPosition(x++, y); Map[y, x] = '@'; Console.Write('@'); } break;
+                    case ConsoleKey.W: Console.Write(' '); Console.SetCursorPosition(x, y--);  break;
+                    case ConsoleKey.A: Console.Write(' '); Console.SetCursorPosition(x--, y);  break;
+                    case ConsoleKey.S: Console.Write(' '); Console.SetCursorPosition(x, y++);  break;
+                    case ConsoleKey.D: Console.Write(' '); Console.SetCursorPosition(x++, y);  break;
                 }
+                Console.Write('@');
 
-                for (int i = y - 1; i < y + 1; i++)
-                    for (int j = x - 1; j < x + 1; j++)  
-                        Console.Write(Map[i, j]);
-                    
-                
+                //for (int i = y - 1; i < y + 1; i++)
+                //    for (int j = x - 1; j < x + 1; j++)
+                //        Console.Write(Map[i, j]);
 
-            //Console.Clear();
-            //    for (int i = 0; i < Map.GetLength(0); i++)
-            //    {
-            //        for (int j = 0; j < Map.GetLength(1); j++)
-            //            Console.Write(Map[i,j]);
-            //        Console.WriteLine();
-            //    }
+
+
+                //Console.Clear();
+                //    for (int i = 0; i < Map.GetLength(0); i++)
+                //    {
+                //        for (int j = 0; j < Map.GetLength(1); j++)
+                //            Console.Write(Map[i,j]);
+                //        Console.WriteLine();
+                //    }
 
 
 
